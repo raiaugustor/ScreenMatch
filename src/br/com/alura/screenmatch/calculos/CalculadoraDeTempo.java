@@ -1,15 +1,26 @@
 package br.com.alura.screenmatch.calculos;
 
-public class FiltroRecomendacao {
-    private String recomendacao;
+import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.screenmatch.modelos.Serie;
+import br.com.alura.screenmatch.modelos.Titulo;
 
-    public void filtra(Classificavel classificavel) {
-        if (classificavel.getClassificacao() >= 4) {
-            System.out.println("Está entre os preferidos do momento");
-        } else if (classificavel.getClassificacao() >= 2) {
-            System.out.println("Muito bem avaliado no momento!");
-        } else {
-            System.out.println("Coloque na sua lista para assistir depois");
-        }
+public class CalculadoraDeTempo {
+    private int tempoTotal;
+
+    public int getTempoTotal() {
+        return this.tempoTotal;
+    }
+
+//    public void inclui(Filme f) {
+//        this.tempoTotal += f.getDuracaoEmMinutos();
+//    }
+//
+//    public void inclui(Serie s) {
+//        this.tempoTotal += s.getDuracaoEmMinutos();
+//    }
+
+    public void inclui(Titulo titulo) {
+        System.out.println("Adicionando duração em minutos de " + titulo);
+        this.tempoTotal += titulo.getDuracaoEmMinutos();
     }
 }
